@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="57c186e0-aa7f-43d5-8a67-73e603b7eaa0" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runtime-0.1.2.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/EricssonDonto.iml" afterPath="$PROJECT_DIR$/EricssonDonto.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/me/defenestration/ericsson/Main.java" afterPath="$PROJECT_DIR$/src/me/defenestration/ericsson/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/me/defenestration/ericsson/connection/protocol/CommandClass.java" afterPath="$PROJECT_DIR$/src/me/defenestration/ericsson/connection/protocol/CommandClass.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/me/defenestration/ericsson/connection/protocol/CommonClass.java" afterPath="$PROJECT_DIR$/src/me/defenestration/ericsson/connection/protocol/CommonClass.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/me/defenestration/ericsson/connection/protocol/ResponseClass.java" afterPath="$PROJECT_DIR$/src/me/defenestration/ericsson/connection/protocol/ResponseClass.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -27,12 +20,12 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/me/defenestration/ericsson/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="492">
-              <caret line="55" column="16" lean-forward="false" selection-start-line="55" selection-start-column="16" selection-end-line="55" selection-end-column="36" />
+            <state relative-caret-position="254">
+              <caret line="53" column="48" lean-forward="false" selection-start-line="53" selection-start-column="48" selection-end-line="53" selection-end-column="48" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#2914#2915#0" expanded="true" />
-                <element signature="e#2948#2949#0" expanded="true" />
+                <element signature="e#3140#3141#0" expanded="true" />
+                <element signature="e#3174#3175#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -354,12 +347,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/me/defenestration/ericsson/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="492">
-          <caret line="55" column="16" lean-forward="false" selection-start-line="55" selection-start-column="16" selection-end-line="55" selection-end-column="36" />
+        <state relative-caret-position="254">
+          <caret line="53" column="48" lean-forward="false" selection-start-line="53" selection-start-column="48" selection-end-line="53" selection-end-column="48" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2914#2915#0" expanded="true" />
-            <element signature="e#2948#2949#0" expanded="true" />
+            <element signature="e#3140#3141#0" expanded="true" />
+            <element signature="e#3174#3175#0" expanded="true" />
           </folding>
         </state>
       </provider>

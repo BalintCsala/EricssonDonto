@@ -30,9 +30,18 @@ public class Main {
         ResponseClass.Response.Reader response;
 
         while (channel.isConnected()) {
-//            response = getResponse();
-//            if (response == null)
-//                continue;
+            response = getResponse();
+            if (response == null)
+                continue;
+
+            int myId = response.getInfo().getOwns();
+            ArrayList<Integer> myUnits = new ArrayList<>();
+
+            StructList.Reader<ResponseClass.Unit.Reader> units = response.getUnits();
+            for (int i = 0; i < units.size(); i++) {
+                if (units.get(i).getOwner() == myId)
+                    myUnits.add(i);
+            }
 
             MessageBuilder message = new MessageBuilder();
             CommandClass.Command.Builder commandBuilder = message.initRoot(CommandClass.Command.factory);
@@ -40,9 +49,9 @@ public class Main {
             StructList.Builder<CommandClass.Move.Builder> moves = command.initMoves(2);
 
             moves.get(0).setDirection(CommonClass.Direction.RIGHT);
-            moves.get(0).setUnit(0);
+            moves.get(0).setUnit(myUnits.get(0));
             moves.get(1).setDirection(CommonClass.Direction.LEFT);
-            moves.get(1).setUnit(1);
+            moves.get(1).setUnit(myUnits.get(1));
 
             try {
                 SerializePacked.writeToUnbuffered(channel, message);
@@ -50,11 +59,6 @@ public class Main {
                 e.printStackTrace();
             }
 
-            try {
-                Thread.sleep(100);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
         }
     }
 
