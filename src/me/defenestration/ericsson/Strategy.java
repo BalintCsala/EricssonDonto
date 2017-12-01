@@ -5,10 +5,6 @@ import me.defenestration.ericsson.connection.protocol.ResponseClass;
 
 import java.util.List;
 
-class Unit {public int x,y;}
-
-class Player{public Unit[] units;}
-
 public class Strategy {
 
 	Map map;
