@@ -99,9 +99,9 @@ public class Main {
 
             ArrayList<Player> players = new ArrayList<>();
             ArrayList<Integer> offsets = new ArrayList<>();
-            for (int i = 0; i < 12; i++) {
+            for (int i = 0; i < 20; i++) {
                 players.add(new Player(new Player.Unit[2]));
-                offsets.set(i, 0);
+                offsets.add(0);
             }
 
             int myId = response.getInfo().getOwns();
@@ -110,9 +110,10 @@ public class Main {
             StructList.Reader<ResponseClass.Unit.Reader> units = response.getUnits();
             for (int i = 0; i < units.size(); i++) {
                 int owner = units.get(i).getOwner();
+                System.out.println(owner + " " + myId);
                 if (owner == myId)
                     myUnits.add(i);
-                Player.Unit unit = players.get(owner).units[offsets.get(owner)];
+                /*Player.Unit unit = new Player.Unit();
                 unit.x = units.get(i).getPosition().getX();
                 unit.y = units.get(i).getPosition().getY();
                 CommonClass.Direction dir = units.get(i).getDirection();
@@ -125,6 +126,7 @@ public class Main {
                 if (dir == CommonClass.Direction.DOWN)
                     unit.vy = -1;
                 unit.id = i;
+                players.get(owner).units[offsets.get(owner)] = unit;*/
             }
 
             MessageBuilder message = new MessageBuilder();
@@ -132,9 +134,9 @@ public class Main {
             CommandClass.Command.Commands.Builder command = commandBuilder.initCommands();
             StructList.Builder<CommandClass.Move.Builder> moves = command.initMoves(2);
 
-            moves.get(0).setDirection(direction2);
+            moves.get(0).setDirection(CommonClass.Direction.lookup[new Random().nextInt(4)]);
             moves.get(0).setUnit(myUnits.get(0));
-            moves.get(1).setDirection(direction);
+            moves.get(1).setDirection(CommonClass.Direction.lookup[new Random().nextInt(4)]);
             moves.get(1).setUnit(myUnits.get(1));
 
             try {

@@ -2,7 +2,7 @@ package me.defenestration.ericsson;
 
 public class Player {
 
-    public class Unit {
+    public static class Unit {
         public int x = 0;
         public int y = 0;
         public int vx = 0;
