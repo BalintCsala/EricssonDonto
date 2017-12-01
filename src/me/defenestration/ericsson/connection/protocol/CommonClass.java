@@ -11,7 +11,7 @@ public final class CommonClass {
         RIGHT(3),
         _NOT_IN_SCHEMA(4);
 
-        private static Direction[] lookup = new Direction[] { UP, LEFT, DOWN, RIGHT, _NOT_IN_SCHEMA };
+        public static Direction[] lookup = new Direction[] { UP, LEFT, DOWN, RIGHT, _NOT_IN_SCHEMA };
         private int id;
 
         Direction(int id) {

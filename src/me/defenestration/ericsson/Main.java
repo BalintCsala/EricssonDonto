@@ -10,6 +10,7 @@ import java.io.*;
 import java.net.InetSocketAddress;
 import java.nio.channels.SocketChannel;
 import java.util.ArrayList;
+import java.util.Random;
 
 public class Main {
 
@@ -34,6 +35,16 @@ public class Main {
             if (response == null)
                 continue;
 
+            Map map = new Map();
+            ListList.Reader<StructList.Reader<ResponseClass.Cell.Reader>> cells = response.getCells();
+            for (int x = 0; x < cells.size(); x++) {
+                for (int y = 0; y < cells.get(x).size(); y++) {
+                    ResponseClass.Cell.Reader cell = cells.get(x).get(y);
+                    map.get(x, y).attackable = cell.getAttack().getCan();
+                    map.get(x, y).owner = cell.getOwner();
+                }
+            }
+
             int myId = response.getInfo().getOwns();
             ArrayList<Integer> myUnits = new ArrayList<>();
 
@@ -48,9 +59,9 @@ public class Main {
             CommandClass.Command.Commands.Builder command = commandBuilder.initCommands();
             StructList.Builder<CommandClass.Move.Builder> moves = command.initMoves(2);
 
-            moves.get(0).setDirection(CommonClass.Direction.RIGHT);
+            moves.get(0).setDirection(CommonClass.Direction.lookup[new Random().nextInt(4)]);
             moves.get(0).setUnit(myUnits.get(0));
-            moves.get(1).setDirection(CommonClass.Direction.LEFT);
+            moves.get(1).setDirection(CommonClass.Direction.lookup[new Random().nextInt(4)]);
             moves.get(1).setUnit(myUnits.get(1));
 
             try {
